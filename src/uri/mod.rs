@@ -30,7 +30,7 @@ use bytes::Bytes;
 use std::error::Error;
 use std::hash::{Hash, Hasher};
 use std::str::{self, FromStr};
-use std::{fmt, u16, u8};
+use std::{fmt, u32, u16, u8};
 
 use self::scheme::Scheme2;
 
@@ -141,7 +141,7 @@ enum ErrorKind {
 }
 
 // u16::MAX is reserved for None
-const MAX_LEN: usize = (u16::MAX - 1) as usize;
+const MAX_LEN: usize = (u32::MAX - 1) as usize;
 
 // URI_CHARS is a table of valid characters in a URI. An entry in the table is
 // 0 for invalid characters. For valid characters the entry is itself (i.e.
